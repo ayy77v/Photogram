@@ -15,3 +15,8 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+
+
+#env
+/config/environments/api-test-764042d1421d.json

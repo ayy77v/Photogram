@@ -1,0 +1,71 @@
+<% 
+require "google/cloud/vision"
+# Instantiates a client
+
+project_id = ''
+
+require "mini_magick"
+
+vision = Google::Cloud::Vision.new project: project_id
+# The name of the image file to annotate
+
+#image_annotator = Google::Cloud::Vision::ImageAnnotator.new
+
+image_path = File.join(Rails.root, 'app', 'views', 'posts', 'images.jpeg')
+
+image  = vision.image image_path
+
+face = image.face
+
+
+#labels = vision.image(image_path).labels
+
+#puts "Labels:"
+#labels.each do |label|
+  #puts label.description
+#end
+%>
+
+
+
+
+<% left_eye = face.features.eyes.left
+
+  
+left_eye_bottom = [left_eye.bottom.x, left_eye.bottom.y] 
+left_eye_top = [left_eye.top.x, left_eye.top.y]
+left_eye_left = [left_eye.left.x, left_eye.left.y]
+left_eye_right = [left_eye.right.x, left_eye.right.y]
+
+#///
+left_eye_topy = left_eye.top.y
+
+left_eye_leftx = left_eye.left.x
+
+left_eye_bottomy = left_eye.bottom.y
+
+left_eye_rightx = left_eye_right.x
+lefteye_left_up = [left_eye_leftx, left_eye_topy]
+
+lefteye_left_down = [left_eye_leftx, left_eye.bottom.y]
+
+kefteye_right_up = [left_eye.right.x, left]
+
+#bottom
+%>
+
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.fillStyle = "red";
+ctx.fillRect(10, 10, 50, 50);
+
+function copy() {
+  var imgData = ctx.getImageData(10, 10, 50, 50);
+  ctx.putImageData(imgData, 10, 70);
+}
+</script>
+
+
+

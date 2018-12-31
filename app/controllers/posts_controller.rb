@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
 	
 	def index
-		 @posts = Post.all
+		   @posts = Post.all.order('created_at DESC').page params[:page]
 	end
 
 	def new
@@ -24,12 +24,14 @@ class PostsController < ApplicationController
 
 	def show
        @post = Post.find(params[:id])
+       post = @post
    end
 
 
 def edit
 	  @post = current_user.posts.find(params[:id])
 end
+
 
 def update
   @post = current_user.posts.find(params[:id])
@@ -41,13 +43,19 @@ def update
       render :edit
     end
   end
-
 def destroy
  @post = current_user.posts.find(params[:id])
   @post.destroy
   redirect_to posts_path
 end
 
+
+
+def advise
+      @post = Post.find(params[:id])
+       post = @post
+
+end
 	private
 
      def post_params
