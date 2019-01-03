@@ -61,6 +61,17 @@
 <% end %>
 
 
+<% require "mini_magick" 
+
+image = MiniMagick::Image.open(@post.image.url(:medium))
+
+image = image.crop "20x30+10+5"
+%>
+
+
+<%= image %>
+
+
 
 <script>
 //Make the DIV element draggagle:

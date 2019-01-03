@@ -13,14 +13,15 @@ gem "google-cloud-vision", "~> 0.31.0"
 gem 'google-api-client'
 
 #gem 'rmagick', '~> 2.16' 
+#gem 'carrierwave'
 
 gem 'mini_magick'
 gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.7'
+gem 'rails', '~> 5.2.0'
 # Use postgresql as the database for Active Record
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
