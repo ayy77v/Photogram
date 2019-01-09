@@ -15,6 +15,7 @@ gem 'google-api-client'
 #gem 'rmagick', '~> 2.16' 
 #gem 'carrierwave'
 
+gem 'file_validators'
 gem 'mini_magick'
 gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
 
@@ -33,7 +34,7 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'paperclip', '~> 4.2'
+#gem 'paperclip', '~> 4.2'
 
 gem 'simple_form'
 

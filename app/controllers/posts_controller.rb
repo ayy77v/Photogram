@@ -4,7 +4,8 @@ class PostsController < ApplicationController
 
 	
 	def index
-		   @posts = Post.all.order('created_at DESC').page params[:page]
+		   @posts = Post.all#.order(:image)#.page params[:page]
+
 	end
 
 	def new
@@ -13,7 +14,9 @@ class PostsController < ApplicationController
 
 	def create
       @post = current_user.posts.build(post_params)
+
 	    if @post.save
+         @post.image.attach(params[:post][:image])
       flash[:success] = "Your post has been created!"
       redirect_to posts_path
     else
