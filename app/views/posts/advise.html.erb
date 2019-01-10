@@ -11,7 +11,7 @@ vision = Google::Cloud::Vision.new project: project_id
 
 #image_annotator = Google::Cloud::Vision::ImageAnnotator.new
 
-image_path = File.join(Rails.root, 'app', 'views', 'posts', 'images.jpeg')
+image_path =  Rails.application.routes.url_helpers.rails_blob_path(@post.image, only_path: true)
 
 image  = vision.image image_path
 
