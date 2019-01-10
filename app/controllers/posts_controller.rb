@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
 	
 	def index
-		   @posts = Post.all#.order(:image)#.page params[:page]
+		   @posts = Post.all.includes(image_attachment: :blob)#.order(:image)#.page params[:page]
 
 	end
 
