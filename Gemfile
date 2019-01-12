@@ -12,6 +12,8 @@ gem "google-cloud-vision", "~> 0.31.0"
 
 gem 'google-api-client'
 
+gem "google-cloud-storage"
+
 #gem 'rmagick', '~> 2.16' 
 #gem 'carrierwave'
 

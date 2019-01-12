@@ -16,6 +16,7 @@ class PostsController < ApplicationController
       @post = current_user.posts.build(post_params)
 
 	    if @post.save
+        @post.image.purge
          @post.image.attach(params[:post][:image])
       flash[:success] = "Your post has been created!"
       redirect_to posts_path

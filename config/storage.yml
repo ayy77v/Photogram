@@ -1,10 +1,10 @@
-test:
-  service: Disk
-  root: <%= Rails.root.join("tmp/storage") %>
+#test:
+  #service: Disk
+  #root: <%= Rails.root.join("tmp/storage") %>
 
-local:
-  service: Disk
-  root: <%= Rails.root.join("storage") %>
+#local:
+  #service: Disk
+  #root: <%= Rails.root.join("storage") %>
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
@@ -15,11 +15,21 @@ local:
 #   bucket: your_own_bucket
 
 # Remember not to checkin your GCS keyfile to a repository
-# google:
-#   service: GCS
-#   project: your_project
-#   credentials: <%= Rails.root.join("path/to/gcs.keyfile") %>
-#   bucket: your_own_bucket
+ google:
+   service: GCS
+   project: "api-test-210607"
+   credentials: <%= Rails.root.join("config/secrets/api-test-764042d1421d.json") %>
+    #<%= Rails.root.join("config/secrets/api-test-5bbe783917ae.json") %>
+   #<%= ENV['GOOGLE_APPLICATION_CREDENTIALS'] %>
+   bucket: "darkphoto"
+
+
+
+#google_dev:
+  #service: GCS
+  #project: todo-pic
+  #credentials: <%= Rails.root.join("config/secrets/api-test-764042d1421d.json") %>
+  #bucket: darkphoto
 
 # Use rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:
